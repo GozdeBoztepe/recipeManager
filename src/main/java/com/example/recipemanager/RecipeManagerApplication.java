@@ -13,7 +13,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ComponentScan(basePackages = "com.example.recipemanager.*")
 @EnableJpaRepositories(basePackages = "com.example.recipemanager.*")
 @SpringBootApplication   
-@EnableAutoConfiguration
 @EnableTransactionManagement
 @EntityScan(basePackages="com.example.recipemanager.*")
 public class RecipeManagerApplication {
