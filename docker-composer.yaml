@@ -1,0 +1,37 @@
+version: '3.8'
+services:
+  db:
+    image: mysql:8.0
+    restart: always
+    platform: linux/amd64
+    environment:
+      MYSQL_DATABASE: recipemanager
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./db:/tmp/database
+    command: mysqld --init-file="/tmp/database/init.sql"
+    networks:
+      - app_net
+    expose:
+      - 3306  
+  app:
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/recipemanager
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    depends_on:
+      - db
+    networks:
+      - app_net
+    restart: always  
+networks:
+  app_net:
+volumes:
+    db_data:  
