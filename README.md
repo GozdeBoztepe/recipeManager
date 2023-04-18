@@ -58,6 +58,7 @@ The data access layer consists of the following components:
 -   Ingredient: A JPA entity representing an ingredient.
 -   User: A JPA entity representing a user.
 -   RecipeRepository: A Spring Data JPA repository interface for managing recipes.
+-   UserRepository: A Spring Data JPA repository interface for managing users.
 
 Technologies Used
 -----------------
@@ -91,4 +92,8 @@ Sample api calls can be found under /postman folder.
 Conclusion
 ----------
 
-This architectural document describes the key components and design decisions of the recipe management application. The application is designed to be easily extensible and maintainable, with a clear separation of concerns and well-defined interfaces between components. By following these design principles, the application is able to meet the requirements of a production-ready REST API for managing recipes.
+In conclusion, this project demonstrates how to build a RESTful API using Spring Boot and integrate it with MySQL database. It provides endpoints to manage recipes including creating, updating, deleting, and retrieving them. Additionally, a Dockerfile has been created to containerize the application.
+
+The implementation is based on good programming practices, such as separation of concerns, dependency injection, and the use of DTOs to decouple the domain model from the API. 
+
+Overall, this project serves as a solid starting point for building a RESTful API using Spring Boot and integrating it with a MySQL database. 
