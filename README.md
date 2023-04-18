@@ -3,7 +3,7 @@
 Introduction
 ------------
 
-This document describes the architecture of a standalone Java application for managing recipes. The application allows users to add, update, remove, and fetch recipes, as well as filter recipes based on various criteria. The application is implemented as a REST API using the Spring framework and is designed to be production-ready.
+The application allows users to add, update, remove, and fetch recipes, as well as filter recipes based on various criteria. The application is implemented as a REST API using the Spring framework and is designed to be production-ready.
 
 Architecture Overview
 ---------------------
@@ -31,6 +31,10 @@ The API supports the following operations:
 -   PUT /recipes/{id}: Updates an existing recipe.
 -   DELETE /recipes/{id}: Deletes a recipe.
 -   POST /recipes/filter: Performs a search for recipes based on various criteria.
+
+-   POST /signin: User login, generates Bearer token to be used in APIs.
+-   POST /signup: Registers a user.
+-   GET /logout: User logout
 
 Service Layer
 -------------
@@ -87,7 +91,13 @@ Database will be initialise with example data. init.db can be found in /db folde
 
 Postman API Examples
 ----------
-Sample api calls can be found under /postman folder.
+Sample API calls can be found under /postman folder.
+
+Sample Header for /recipes APIs
+```
+Authorization:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4MTg1NjA5OCwiZXhwIjoxNjgxOTQyNDk4fQ.AcPDvXpFGvATUi_pTZIDphGfPVgiHIHTQSISOH57Lf-Cw1bMCSs_u-x1zZ1JnJiYgxJd45jBzn5ydaDbrtOkFA
+Content-Type:application/json
+```
 
 Conclusion
 ----------
