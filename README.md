@@ -32,9 +32,9 @@ The API supports the following operations:
 -   DELETE /recipes/{id}: Deletes a recipe.
 -   POST /recipes/filter: Performs a search for recipes based on various criteria.
 
--   POST /signin: User login, generates Bearer token to be used in APIs.
--   POST /signup: Registers a user.
--   GET /logout: User logout
+-   POST /auth/signin: User login, generates Bearer token to be used in APIs.
+-   POST /auth/signup: Registers a user.
+-   GET /auth/logout: User logout
 
 Service Layer
 -------------
@@ -44,8 +44,8 @@ The service layer provides the business logic for managing the recipes. It is re
 The service layer supports the following operations:
 -   signup: Register a user with username, email and password.
 -   signin: Return bearer token for authorization. 
--   findAllRecipes: Returns a list of all recipes.
--   findRecipeById: Returns the details of a specific recipe.
+-   getAllRecipes: Returns a list of all recipes.
+-   getRecipe: Returns the details of a specific recipe.
 -   createRecipe: Adds a new recipe.
 -   updateRecipe: Updates an existing recipe.
 -   deleteRecipe: Deletes a recipe.
