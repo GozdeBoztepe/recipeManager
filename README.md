@@ -76,11 +76,17 @@ The following technologies are used in the Recipe Manager Application:
 -   JWT
 -   MySQL
 -   Docker
+=   Maven
 
 Deployment
 ----------
 
-The application is designed to be deployed as a Docker container, which simplifies deployment and ensures consistency across environments. The Docker image includes the application and its dependencies, as well as the MySQL database.
+The application is designed to be deployed as a Docker container, which simplifies deployment and ensures consistency across environments. The Docker image includes the application and its dependencies, as well as the MySQL database. 
+
+To create app jar, use the following command:
+```
+mvn clean package
+```
 
 To run the Docker container, use the following command:
 
@@ -93,9 +99,20 @@ Postman API Examples
 ----------
 Sample API calls can be found under /postman folder.
 
+Bear token needs to be used in /recipe APIs. To generate the token, user registeration and then user signin is necessary.
+To get token /auth/signin needs to be used. 
+Sample response for /auth/signin
+```
+{
+    "username": "admin",
+    "tokenType": "Bearer",
+    "accessToken": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4MTg1NjMwOCwiZXhwIjoxNjgxOTQyNzA4fQ.rKzBREt-DnYHksd4s4UGeftfoArp2dQHM0_CQMG0cKoi_KrxoCxxyBAtDD5kJ83yA7_eOMGt6noM-pwg9uWn5Q"
+}
+```
+
 Sample Header for /recipes APIs
 ```
-Authorization:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4MTg1NjA5OCwiZXhwIjoxNjgxOTQyNDk4fQ.AcPDvXpFGvATUi_pTZIDphGfPVgiHIHTQSISOH57Lf-Cw1bMCSs_u-x1zZ1JnJiYgxJd45jBzn5ydaDbrtOkFA
+Authorization:eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4MTg1NjMwOCwiZXhwIjoxNjgxOTQyNzA4fQ.rKzBREt-DnYHksd4s4UGeftfoArp2dQHM0_CQMG0cKoi_KrxoCxxyBAtDD5kJ83yA7_eOMGt6noM-pwg9uWn5Q
 Content-Type:application/json
 ```
 
