@@ -76,7 +76,7 @@ The following technologies are used in the Recipe Manager Application:
 -   JWT
 -   MySQL
 -   Docker
-=   Maven
+-   Maven
 
 Deployment
 ----------
